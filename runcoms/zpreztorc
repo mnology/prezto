@@ -38,9 +38,9 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'git' \
   'history-substring-search' \
   'prompt' \
-  'git' \
   'ssh' \
   'ruby' \
   'tmux' \
@@ -57,7 +57,7 @@ zstyle ':prezto:load' pmodule \
 # Completions
 #
 
-# Set the entries to ignore in static '/etc/hosts' for host completion.
+# Set the entries to ignore in static */etc/hosts* for host completion.
 # zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
 #   '0.0.0.0' '127.0.0.1'
 
@@ -231,7 +231,7 @@ zstyle ':prezto:module:tmux:auto-start' local 'yes'
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
-#zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+# zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 
 # Set the default session name:
 # zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
