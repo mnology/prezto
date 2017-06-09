@@ -40,7 +40,8 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'git' \
   'prompt' \
-  'ssh'
+  'ssh' \
+  'ruby'
 
 #
 # Autosuggestions
@@ -161,7 +162,7 @@ zstyle ':prezto:module:ruby:rbenv' auto-switch 'yes'
 #
 
 # Set the SSH identities to load into the agent.
-zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'aws_pre_prod'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'jlrngi-iac_id_rsa'
 
 #
 # Syntax Highlighting
