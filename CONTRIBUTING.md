@@ -56,6 +56,28 @@ Then to start zsh in this development environment you will run:
 ZDOTDIR=/path/to/devel-zprezto zsh
 ```
 
+#### Using an Alternative zprezto Directory
+
+To work on zprezto without messing with your current configuration:
+
+```sh
+mkdir devel-zprezto
+cd devel-zprezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto
+ZDOTDIR=$(pwd)
+echo "Your development ZDOTDIR is $ZDOTDIR"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
+
+Then to start zsh in this development environment you will run:
+
+```sh
+ZDOTDIR=/path/to/devel-zprezto zsh
+```
+
 #### Modules
 
    - A *README.md* must be present.
