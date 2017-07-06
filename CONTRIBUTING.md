@@ -55,16 +55,38 @@ Then to start zsh in this development environment you will run:
 ZDOTDIR=/path/to/devel-zprezto zsh
 ```
 
-### Modules
+#### Using an Alternative zprezto Directory
 
-- A *README.md* must be present.
-- Large functions must be placed in a *functions* directory.
-- Functions that take arguments must have completion.
+To work on zprezto without messing with your current configuration:
 
-### Themes
+```sh
+mkdir devel-zprezto
+cd devel-zprezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto
+ZDOTDIR=$(pwd)
+echo "Your development ZDOTDIR is $ZDOTDIR"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
 
-- A screenshots section must be present in the file header.
-- The pull request description must have [embedded screenshots][6].
+Then to start zsh in this development environment you will run:
+
+```sh
+ZDOTDIR=/path/to/devel-zprezto zsh
+```
+
+#### Modules
+
+   - A *README.md* must be present.
+   - Large functions must be placed in a *functions* directory.
+   - Functions that take arguments must have completion.
+
+#### Themes
+
+   - A screenshots section must be present in the file header.
+   - The pull request description must have [embedded screenshots][6].
 
 [1]: https://github.com/sorin-ionescu/prezto/contributors
 [2]: https://gun.io/blog/how-to-github-fork-branch-and-pull-request
