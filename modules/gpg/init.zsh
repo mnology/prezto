@@ -17,6 +17,9 @@ _gpg_agent_env="${XDG_CACHE_HOME:-$HOME/.cache}/prezto/gpg-agent.env"
 # Load environment variables from previous run
 source "$_gpg_agent_env" 2> /dev/null
 
+# Load environment variables from previous run
+source "$_gpg_agent_env" 2> /dev/null
+
 # Start gpg-agent if not started.
 if [[ -z "$GPG_AGENT_INFO" && ! -S "${GNUPGHOME:-$HOME/.gnupg}/S.gpg-agent" ]]; then
   # Start gpg-agent if not started.
