@@ -41,6 +41,12 @@ Alternatives
 Specifically on macOS, [The Unarchiver][1] provides a similar command line tool
 which doesn't depend on a number of other programs being installed.
 
+Alternatives
+------------
+
+Specifically on macOS, [The Unarchiver][1] provides a similar command line tool
+which doesn't depend on a number of other programs being installed.
+
 Authors
 -------
 
