@@ -15,8 +15,13 @@ fi
 # aws completion
 source /usr/local/bin/aws_zsh_completer.sh
 
-# local utils
-source "$HOME/lib/git_utils.shlib"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# powerline for zsh
+if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+  source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+
+# go
+export GOPATH="${HOME}"
