@@ -25,3 +25,6 @@ fi
 
 # go
 export GOPATH="${HOME}"
+
+# direnv
+eval "$(direnv hook zsh)"
