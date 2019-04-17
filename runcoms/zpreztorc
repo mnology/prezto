@@ -35,7 +35,9 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'prompt' \
   'ssh' \
-  'ruby'
+  'ruby' \
+  'tmux' \
+  'node'
 
 #
 # Autosuggestions
@@ -176,7 +178,7 @@ zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'jlrngi-iac_id_rsa'
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
 # zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
