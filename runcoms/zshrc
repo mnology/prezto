@@ -19,16 +19,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # powerline for zsh
-if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-  source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+if [[ -r /usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+  source /usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
+
+export PATH="${HOME}/bin:${PATH}"
 
 # go
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$GOROOT/bin:${RBENV_ROOT}/bin:$PATH"
+export PATH="${PYENV_ROOT}/bin:$PATH:$GOPATH/bin"
+eval "$(pyenv init -)"
 
 # direnv
 eval "$(direnv hook zsh)"
