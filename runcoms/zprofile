@@ -18,13 +18,13 @@ fi
 #
 
 if [[ -z "$EDITOR" ]]; then
-  export EDITOR='gvim -f'
+  export EDITOR='v'
 fi
 if [[ -z "$VISUAL" ]]; then
-  export VISUAL='gvim -f'
+  export VISUAL='v'
 fi
 if [[ -z "$PAGER" ]]; then
-  export PAGER='most'
+  export PAGER='cat'
 fi
 
 #
