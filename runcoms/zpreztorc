@@ -224,8 +224,15 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 # Tmux
 #
 
-# Auto start a session when Zsh is launched in a local terminal.
-zstyle ':prezto:module:tmux:auto-start' local 'yes'
+# Auto start a session when Zsh is launched in a local terminal, EXCEPT in
+# editor-spawned shells. Kiro IDE and VS Code run `tmux attach-session -d`
+# through auto-start, which detaches the WezTerm client and closes its window.
+# Detect editor shells by their env and disable auto-start only there.
+if [[ "$TERM_PROGRAM" == "kiro" || "$TERM_PROGRAM" == "vscode" || -n "$VSCODE_INJECTION" ]]; then
+  zstyle ':prezto:module:tmux:auto-start' local 'no'
+else
+  zstyle ':prezto:module:tmux:auto-start' local 'yes'
+fi
 
 # Auto start a session when Zsh is launched in a SSH connection.
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
