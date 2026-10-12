@@ -161,7 +161,8 @@ zstyle ':prezto:module:python:virtualenv' initialize 'yes'
 #
 
 # Auto switch the Ruby version on directory change.
-zstyle ':prezto:module:ruby:rbenv' auto-switch 'yes'
+# Disabled: rbenv is removed; mise manages ruby and switches via .tool-versions.
+# zstyle ':prezto:module:ruby:rbenv' auto-switch 'yes'
 
 #
 # Screen

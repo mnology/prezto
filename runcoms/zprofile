@@ -6,7 +6,6 @@
 
 export PYENV_ROOT="$HOME/.pyenv"
 export GOENV_ROOT="$HOME/.goenv"
-export RBENV_ROOT=~/devel/dotfiles/rbenv
 export PATH="$HOME/.local/bin:$PYENV_ROOT/bin:$GOENV_ROOT/bin:$HOME/.poetry/bin:$HOME/.cargo/bin:$PATH"
 
 # mise: use shims in non-interactive shells (the zsh hook only fires at prompts)
