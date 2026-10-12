@@ -21,6 +21,10 @@ eval "$(direnv hook zsh)"
 # tinty shell theming
 eval "$(tinty init)"
 
+# fzf colors follow tinty
+[ -r "$HOME/.local/share/tinted-theming/tinty/tinted-fzf-sh-file.sh" ] &&
+  . "$HOME/.local/share/tinted-theming/tinty/tinted-fzf-sh-file.sh"
+
 # prompt
 eval "$(starship init zsh)"
 
