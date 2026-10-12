@@ -38,7 +38,13 @@ tinty_source_shell_theme() {
 }
 
 if command -v tinty >/dev/null 2>&1; then
-  tinty_source_shell_theme init >/dev/null
+  # Source the current scheme's shell colors directly. "tinty init" reruns
+  # every hook (wezterm, meld, kiro) per shell: slow and already applied.
+  _tinty_data="${XDG_DATA_HOME:-$HOME/.local/share}/tinted-theming/tinty"
+  _tinty_cur=$(cat "$_tinty_data/artifacts/current_scheme" 2>/dev/null)
+  _tinty_sh="$_tinty_data/repos/tinted-shell/scripts/$_tinty_cur.sh"
+  [ -r "$_tinty_sh" ] && . "$_tinty_sh"
+  unset _tinty_data _tinty_cur _tinty_sh
   alias tinty=tinty_source_shell_theme
 fi
 
