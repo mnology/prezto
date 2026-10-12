@@ -30,7 +30,7 @@ if [[ -z "$VISUAL" ]]; then
   export VISUAL='v'
 fi
 if [[ -z "$PAGER" ]]; then
-  export PAGER='cat'
+  export PAGER='bat --plain --paging=always'
 fi
 
 #
